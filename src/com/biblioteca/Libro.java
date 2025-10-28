@@ -9,7 +9,6 @@ public class Libro {
     public Libro(String titulo, String autor) {
         this.titulo = titulo;
         this.autor = autor;
-        this.prestado = false; // Por defecto, no está prestado
     }
     // Getters y Setters: controlan el acceso a los atributos
     public String getTitulo() {
