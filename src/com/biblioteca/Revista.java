@@ -1,21 +1,21 @@
 package com.biblioteca;
 
-class Revista extends Material {
-    // Atributo específico de Revista
+public class Revista extends Material {
     private int numeroEdicion;
-
-    // Constructor
     public Revista(String id, String titulo, int numeroEdicion) {
         super(id, titulo);
         this.numeroEdicion = numeroEdicion;
     }
-
-    // Getter específico
     public int getNumeroEdicion() {
         return numeroEdicion;
     }
-
-    // Sobrescribir método para mostrar información específica de Revista
+    // Implementación del método abstracto (abstracción)
+    @Override
+    public double calcularMulta(int diasRetraso) {
+        // Multa de $1.500 por día de retraso para revistas
+        return diasRetraso * 1.5;
+    }
+    // Implementación del método abstracto (abstracción)
     @Override
     public void mostrarInfo() {
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -27,3 +27,4 @@ class Revista extends Material {
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
     }
 }
+
