@@ -1,23 +1,26 @@
 package com.biblioteca;
 
 public class Libro extends Material {
-    // Atributos específicos de Libro
     private String autor;
     private String isbn;
-    // Constructor: llama al constructor de la clase padre con super()
     public Libro(String id, String titulo, String autor, String isbn) {
-        super(id, titulo); // Inicializa atributos de Material
+        super(id, titulo);
         this.autor = autor;
         this.isbn = isbn;
     }
-    // Getters específicos
     public String getAutor() {
         return autor;
     }
     public String getIsbn() {
         return isbn;
     }
-    // Sobrescribir método para mostrar información específica de Libro
+    // Implementación del método abstracto (abstracción)
+    @Override
+    public double calcularMulta(int diasRetraso) {
+        // Multa de $2.000 por día de retraso para libros
+        return diasRetraso * 2.0;
+    }
+    // Implementación del método abstracto (abstracción)
     @Override
     public void mostrarInfo() {
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
